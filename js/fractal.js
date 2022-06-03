@@ -51,33 +51,33 @@ createSierpinskiTriangle([x, y], len, 6)
 
 var Depth = document.getElementById("minmax-range1")
 var side = document.getElementById("minmax-range2")
-var Zoom = document.getElementById("minmax-range3")
+//var Zoom = document.getElementById("minmax-range3")
 
 Depth.addEventListener("change", function() {
-    ctx.clearRect(0, 0, canvas.width * zoom, canvas.height * zoom)
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
     createSierpinskiTriangle([x, y], len, Depth.value)
 }, false)
 
 side.addEventListener("change", function() {
     multiplier = side.value / 100
-    ctx.clearRect(0, 0, canvas.width * zoom, canvas.height * zoom)
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
     createSierpinskiTriangle([x, y], len, Depth.value)
 }, false)
 
-Zoom.addEventListener("change", function() {
-    let z = (Zoom.value / 100) - zoom
-    if (z < 0)
-        z = 1 + z
-    else
-        z = 1 / (1 - z)
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    ctx.scale(z, z)
-    x /= z
-    y /= z
-    
-    createSierpinskiTriangle([x, y], len, Depth.value)
-    zoom = Zoom.value / 100
-}, false)
+//Zoom.addEventListener("change", function() {
+//    let z = (Zoom.value / 100) - zoom
+//    if (z < 0)
+//        z = 1 + z
+//    else
+//        z = 1 / (1 - z)
+//    ctx.clearRect(0, 0, canvas.width, canvas.height)
+//    ctx.scale(z, z)
+//    x /= z
+//    y /= z
+//    
+//    createSierpinskiTriangle([x, y], len, Depth.value)
+//    zoom = Zoom.value / 100
+//}, false)
 
 document.getElementById("flexCheckChecked").addEventListener("change", function() {
     if (this.checked)
