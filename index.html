@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+
+        <title>
+            Sierpinski Triangle
+        </title>
+
+        <!-- Favicons Start -->
+	    <link rel="shortcut icon" type="image/png" href="icon/favicon.png" />
+	    <!-- Favicons End -->
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        
+    </head>
+    <body>
+        <header>
+            <nav class="flex items-center bg-gray-800 justify-between p-1 pr-10" id = "nav">
+                <img id = "navicon" src = "icon/sierpinski.png" alt = "!:("/>
+
+                <div class = "block mx-auto">
+                    <label for="minmax-range1">
+                        <strong>Depth</strong>
+                    </label>
+                    <input id="minmax-range1" type="range" min="0" max="9" value="6" class="w-full h-2 bg-gray-200 rounded-lg cursor-pointer dark:bg-gray-800">
+                </div>
+
+                <div class = "block mx-auto">
+                    <label for="minmax-range2">
+                        <strong>Length of Side of Sub-Triangle</strong>
+                    </label>
+                    <input id="minmax-range2" type="range" min="30" max="90" value="60" class="w-full h-2 bg-gray-200 rounded-lg cursor-pointer dark:bg-gray-800">
+                </div>
+
+                <div class = "block mx-auto">
+                    <label for="minmax-range2">
+                        <strong>Zoom</strong>
+                    <input id="minmax-range3" type="range" min="9" max="99" value="54" class="w-full h-2 bg-gray-200 rounded-lg cursor-pointer dark:bg-gray-800">
+                </div>
+
+                <div class="flex space-x-4">
+                    <input type="checkbox" id="flexCheckChecked" checked>
+                    <label for="flexCheckChecked">
+                        <strong>Show Border</strong>
+                    </label>
+                </div>
+            </nav>
+        </header>
+        <canvas id="viewport"></canvas>
+        <script type="text/javascript" src="js/fractal.js"></script>
+    </body>
+</html>
